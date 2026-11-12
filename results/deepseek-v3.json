@@ -1,0 +1,122 @@
+{
+  "fixture": "fixtures/deepseek-v3-tail.npz",
+  "original_tensor_shape": [
+    129280,
+    7168
+  ],
+  "discovery_rows": [
+    129272,
+    129274,
+    129276,
+    129278
+  ],
+  "heldout_rows": [
+    129273,
+    129275,
+    129277,
+    129279
+  ],
+  "columns_per_row": 7168,
+  "candidate_count": 4,
+  "selected": {
+    "seed": 953049583,
+    "sms": 132,
+    "offset": 0,
+    "discovery_r": 0.9999986152905597
+  },
+  "discovery_top_10": [
+    {
+      "seed": 953049583,
+      "sms": 132,
+      "offset": 0,
+      "discovery_r": 0.9999986152905597
+    },
+    {
+      "seed": 953049583,
+      "sms": 108,
+      "offset": 0,
+      "discovery_r": 0.009448171283234424
+    },
+    {
+      "seed": 953049583,
+      "sms": 152,
+      "offset": 0,
+      "discovery_r": 0.003868465539146167
+    },
+    {
+      "seed": 953049583,
+      "sms": 148,
+      "offset": 0,
+      "discovery_r": -0.0015857127431513477
+    }
+  ],
+  "heldout_controls": [
+    {
+      "label": "selected",
+      "seed": 953049583,
+      "sms": 132,
+      "offset": 0,
+      "heldout_r": 0.9999986286344349,
+      "row_correlations": {
+        "129273": 0.9999986370280798,
+        "129275": 0.9999986088667784,
+        "129277": 0.9999986149052359,
+        "129279": 0.9999986546372749
+      }
+    },
+    {
+      "label": "wrong_seed",
+      "seed": 953049584,
+      "sms": 132,
+      "offset": 0,
+      "heldout_r": 0.00585464999893876,
+      "row_correlations": {
+        "129273": 0.009012768722719456,
+        "129275": 0.01715096241036945,
+        "129277": 0.004287893519150096,
+        "129279": -0.007293552461408056
+      }
+    },
+    {
+      "label": "alternative_layout",
+      "seed": 953049583,
+      "sms": 108,
+      "offset": 0,
+      "heldout_r": 0.008304264683073858,
+      "row_correlations": {
+        "129273": 0.010100873706243137,
+        "129275": 0.0007042180630761758,
+        "129277": 0.023532377026069935,
+        "129279": -0.0008727833214852755
+      }
+    },
+    {
+      "label": "alternative_layout",
+      "seed": 953049583,
+      "sms": 148,
+      "offset": 0,
+      "heldout_r": 0.001067069238016089,
+      "row_correlations": {
+        "129273": -0.014389318536252731,
+        "129275": 0.02356076823479661,
+        "129277": 0.006026923481430985,
+        "129279": -0.0116528664579691
+      }
+    },
+    {
+      "label": "alternative_layout",
+      "seed": 953049583,
+      "sms": 152,
+      "offset": 0,
+      "heldout_r": -0.002202885133236224,
+      "row_correlations": {
+        "129273": 0.012798891654112812,
+        "129275": -0.017145259253876846,
+        "129277": 0.0030394071492365555,
+        "129279": -0.006817283942542927
+      }
+    }
+  ],
+  "interpretation": "NumPy normal transform; GPU scripts provide the bitwise comparison.",
+  "statistical_note": "Row-level correlations are reported because checkpoint coordinates may be dependent."
+}

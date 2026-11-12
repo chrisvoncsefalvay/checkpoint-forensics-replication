@@ -1,0 +1,34 @@
+{
+  "repo": "deepseek-ai/DeepSeek-V3-Base",
+  "revision": "afb92e1fa402c2be2a9eb085312bb02e0384d6c7",
+  "tensor": "model.embed_tokens.weight",
+  "shard": "model-00001-of-000163.safetensors",
+  "shape": [
+    129280,
+    7168
+  ],
+  "dtype": "BF16",
+  "rows": [
+    129272,
+    129273,
+    129274,
+    129275,
+    129276,
+    129277,
+    129278,
+    129279
+  ],
+  "raw_row_sha256": [
+    "df89be24dc6ea3321771e59e6f38c2f8c81af6b7847f80e8b0171e7711e5b8f9",
+    "1e30bd3bcac4c22e97719ec1b93f096ec734d939442ac346a80b32021d946ab1",
+    "e651a4b98945f42ba0cb2fcf28db4d3a974da64640d461854cbb0896787c1013",
+    "100ee82fd9139b499f4828047f26df574f8a2a7c86efdbe5bfde39d872fafc78",
+    "e02504cdabcd94387ca2a07c10778649c8fbe5d62b33f092c2265b0d56e7f7a1",
+    "580edbf78fbf02ca8b0fd2f0320a752cd823090c513a923dac6d5e7ecb79a3fe",
+    "29fdc6166bf8af14ce4676102558335244bd0c5bd570e8586b779889afa3e5f1",
+    "b0f028d9c1a168fc511083a59132172a7ab80be3db2ba56c7aaab090ec306e5f"
+  ],
+  "url": "https://huggingface.co/deepseek-ai/DeepSeek-V3-Base/resolve/afb92e1fa402c2be2a9eb085312bb02e0384d6c7/model-00001-of-000163.safetensors",
+  "fixture_sha256": "e386d9fb4e50ee08b5466f556cff7a377c3796146d2868cb52bd3aa24c0c79e0",
+  "origin": "actual published Hugging Face checkpoint; no synthetic observations"
+}

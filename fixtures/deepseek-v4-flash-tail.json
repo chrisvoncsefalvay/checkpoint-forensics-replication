@@ -1,0 +1,50 @@
+{
+  "repo": "deepseek-ai/DeepSeek-V4-Flash",
+  "revision": "60d8d70770c6776ff598c94bb586a859a38244f1",
+  "tensor": "embed.weight",
+  "shard": "model-00001-of-00046.safetensors",
+  "shape": [
+    129280,
+    4096
+  ],
+  "dtype": "BF16",
+  "rows": [
+    129264,
+    129265,
+    129266,
+    129267,
+    129268,
+    129269,
+    129270,
+    129271,
+    129272,
+    129273,
+    129274,
+    129275,
+    129276,
+    129277,
+    129278,
+    129279
+  ],
+  "raw_row_sha256": [
+    "04be1570ab9e8053e941a3b55f53535db9857d220ada9453825828906ed359fb",
+    "4c8c310811944b4b2c6b34286c083a17bb37369fa2f13b494dcd19d9c9782928",
+    "d133361094d65f8401e86738528010231655e34df84241644e0f24c6eaed9640",
+    "88607200d5f57acc959f2943d97e7aa14c561dd84ea89fa9f5518604c9e06eee",
+    "ab93b3053c361a1a0db69d4e9cfe8b0258ffb913a418904a683c5041a2520194",
+    "f22e0e42a8979d22100fdd22608f31326d9c9b3ecd7625754b08bfc8c7754b1e",
+    "ce6c6677a5dedcdba2ee384c0a386ada768d35c1fcdc8c9449a34c11638ddc9c",
+    "04c6941e93ec1839ca9f46883b285d414a6c0ac7465204602f3cb7246054c871",
+    "182e683e57e194f180b4cade2a2fe2a4f3561a1fb4044b8c98f00f57cfc55649",
+    "6c77f2ff65cf85b6ae134bfa018bbb85d24ed30aa3f5d45a0b2d627a428bb742",
+    "12c1429e5285f694d003f4c643d631c651a334d1e4e4e33ae761b24f6100d1e6",
+    "f4374ecbcc8a3b648addd3c7bf5eeabe8e6ae6ea3c42716815044f4a73e46ab0",
+    "2fc2cd62cde185ef58ecc2913a3c968783b6ea9d017bc45209de42626d93b654",
+    "55598bfbc738bdc3b590da76814cebc4cedfe3a63b850f7aaad4fa7d276d8f3c",
+    "ea52fb578969a779964a48977b13780a6fa0655f80a3bb7d78433d481b955dd9",
+    "52f1d04289d1effcacc44223a031d381657047182bc7b844803451b9b7bc1bb5"
+  ],
+  "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash/resolve/60d8d70770c6776ff598c94bb586a859a38244f1/model-00001-of-00046.safetensors",
+  "fixture_sha256": "cbc2f7a3615d5873de0e20371e2c12b5b6d9fb248761533e0c8e5960d36bead6",
+  "origin": "actual published Hugging Face checkpoint; no synthetic observations"
+}
