@@ -1,0 +1,38 @@
+{
+  "repo": "deepseek-ai/DeepSeek-V3-Base",
+  "revision": "afb92e1fa402c2be2a9eb085312bb02e0384d6c7",
+  "tensor": "model.embed_tokens.weight",
+  "start_row": 129272,
+  "end_row_exclusive": 129280,
+  "scanned_rows": 8,
+  "weight_bytes_read": 114688,
+  "metadata_bytes_read": 34127,
+  "batch_rows": 2,
+  "stops": [
+    {
+      "limit": "rows",
+      "rows": 2,
+      "weight_bytes": 28672
+    },
+    {
+      "limit": "weight bytes",
+      "rows": 4,
+      "weight_bytes": 57344
+    },
+    {
+      "limit": "complete",
+      "rows": 8,
+      "weight_bytes": 114688
+    }
+  ],
+  "completed_rerun_additional_bytes": 0,
+  "streamed_correlation": 0.9999986219378262,
+  "fixture_correlation": 0.9999986219378265,
+  "candidate_correlations": {
+    "953049583:132:0": 0.9999986219378262,
+    "953049583:148:0": -0.0002273210266064351,
+    "953049584:132:0": 0.0009723420094335086,
+    "953049584:148:0": 0.0049497147145654416
+  },
+  "method": "Online Hugging Face scan, resumed twice; all row values scored"
+}

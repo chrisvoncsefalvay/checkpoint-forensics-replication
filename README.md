@@ -48,6 +48,14 @@ The downloader reads safetensors headers and selected rows through HTTP Range
 requests. It records the model revision, tensor, row indices and SHA-256 hashes
 beside each fixture. `--rows` accepts a half-open range or comma-separated indices.
 
+## Scan beyond the fixtures
+
+The `scan` command streams selected tensors or a whole checkpoint, with byte,
+row, tensor and time limits and resumable progress. It keeps the original tensor
+indices while reading batches and handles PyTorch’s contiguous TensorIterator
+splits above the 32-bit byte-offset limit. See [the streaming guide](docs/streaming.md)
+for commands and per-tensor initialisation settings.
+
 ## How the comparison works
 
 The analyser generates Philox4x32-10 streams for each candidate seed, thread
@@ -113,7 +121,7 @@ rest of training, its location or how it was acquired.
 python -m unittest discover -s tests -v
 ```
 
-Four tests cover the checkpoint hashes, discovery/holdout split and the two
+Seven tests cover the checkpoint hashes, discovery/holdout split and the two
 DeepSeek results with their negative controls. All use the downloaded weights.
 Model slices retain their upstream licences; the fixture manifests identify
 their source repositories and revisions.
