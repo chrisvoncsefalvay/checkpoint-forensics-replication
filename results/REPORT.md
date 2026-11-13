@@ -1,6 +1,6 @@
 # Checkpoint results
 
-12 November 2026
+12–13 November 2026
 
 ## DeepSeek-V3
 
@@ -62,21 +62,61 @@ python -m checkpoint_forensics.cli analyse fixtures/deepseek-v4-flash-tail.npz \
 
 ## Kimi K3
 
-Downloaded the final 16 real embedding rows at revision
-`f831ab66814297da540d832a5235f8e904f29d06`.
-Using seed 20256586 and offset zero, all candidate correlations were near zero.
-A bounded exploratory search over 1,024 four-aligned offsets and four layouts
-also failed to generalise (best discovery r 0.1247, holdout r -0.0291, using 128
-columns per row). The selected rows may differ from the report’s 13 preserved rows; their
-construction order, sharding and offset remain unknown. The offset search reused
-the first fixture, so its holdout result is exploratory.
+The whole-embedding scan recovers a 152-SM pattern. Fourteen rows selected using
+128 coordinates each reproduce on the remaining 7,040 coordinates per row:
+**r = 0.9999961306 across 98,560 held-out values**.
+
+| Held-out candidate | Correlation |
+|---|---:|
+| Seed 20256586, 152 SMs, offset 0 | 0.9999961306 |
+| Seed 20256587 | 0.0017341414 |
+| 108 SMs | −0.0034190414 |
+| 132 SMs | 0.0047935794 |
+| 148 SMs | 0.0055033749 |
+| Initial offset +4 | 0.0007715995 |
+
+The selected rows are 124, 125, 177–187 and 1699 in
+`language_model.model.embed_tokens.weight`, shape [163840, 7168], at revision
+`f831ab66814297da540d832a5235f8e904f29d06`. The seed is taken from the original
+report. The candidate and selected rows were fixed before scoring the other
+7,040 coordinates. Row-level results and the discovery column indices are in
+[kimi-k3-confirmation.json](kimi-k3-confirmation.json).
+
+The earlier tests missed this for two reasons. Their fixtures covered the last
+256 rows, whereas the confirmed matches are near the beginning of the vocabulary.
+The first emulator also assumed a single launch, but Kimi's BF16 embedding
+exceeds TensorIterator's 32-bit byte-offset limit. PyTorch reserves the outer
+call's RNG state and initialises two halves: for 152 SMs, their offsets are
+3776 and 5664. The successful rows are in the first half. On the first five
+confirmed rows, the old mapping gives r = −0.00974, compared with 0.99999617
+under the corrected mapping.
+
+The surviving pattern's fitted scale is approximately 2.46×10⁻⁶. This is evidence
+of a retained initialisation pattern at a small scale, rather than numerically
+untouched weights. As with DeepSeek, the CPU calculation establishes the layout
+match; the physical-GPU bitwise and NVIDIA-versus-AMD comparisons remain separate.
+
+Reproduce the confirmation from the published checkpoint slice:
+
+```sh
+python scripts/confirm_kimi.py
+```
+
+The original bounded-search outputs remain in the repository. Their negative
+result applies to those rows and mappings, not to the corrected whole-embedding
+search. See [kimi-k3-scan.json](kimi-k3-scan.json) for the scan configuration,
+coverage and candidate statistics. The completed scan covered all 163,840
+embedding rows at 128 columns each (20,971,520 values per candidate), reading
+2,348,810,240 weight bytes. Sixteen rows exceeded discovery r = 0.99 under
+the 152-SM layout. Fourteen have the held-out confirmation above; rows 57118
+and 57119 were also discovery matches but were not independently confirmed.
+The 108- and 132-SM layouts each produced one threshold hit above 0.4, and
+148 SMs produced none. A threshold hit alone is not a confirmed fingerprint.
 
 ## Reproduction
 
 - `python -m compileall -q checkpoint_forensics`: passed.
-- `python -m unittest discover -s tests -v`: four tests passed using actual
+- `python -m unittest discover -s tests -v`: eight tests passed using actual
   downloaded checkpoints only (fixture provenance/integrity and split/control
-  construction and the real V3/V4 fingerprint regressions).
+  construction and the real DeepSeek/Kimi fingerprint regressions).
 - CUDA scripts supplied but not run in this CPU environment.
-
-An exploratory offset-zero check of a further 240 Kimi special-token rows also found no high-correlation row. The corresponding fixture and results are included.

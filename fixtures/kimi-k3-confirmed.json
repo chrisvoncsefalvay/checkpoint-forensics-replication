@@ -1,0 +1,47 @@
+{
+  "repo": "moonshotai/Kimi-K3",
+  "revision": "f831ab66814297da540d832a5235f8e904f29d06",
+  "tensor": "language_model.model.embed_tokens.weight",
+  "shard": "model-00094-of-000096.safetensors",
+  "shape": [
+    163840,
+    7168
+  ],
+  "dtype": "BF16",
+  "url": "https://huggingface.co/moonshotai/Kimi-K3/resolve/f831ab66814297da540d832a5235f8e904f29d06/model-00094-of-000096.safetensors",
+  "origin": "actual published Hugging Face checkpoint; no synthetic observations",
+  "rows": [
+    124,
+    125,
+    177,
+    178,
+    179,
+    180,
+    181,
+    182,
+    183,
+    184,
+    185,
+    186,
+    187,
+    1699
+  ],
+  "raw_row_sha256": [
+    "fb18a82220e699780258a129d26b95c3b17f1e223e16cac00b119486b6d8ccad",
+    "492e827f65ec3b1659f1b54ae46754f385c7f0149d513c02e91f66d021fd3ee2",
+    "93fbd3569ea1a78cc229ae18309e276956b8518d1a973205b1ed7c78c7f3b64b",
+    "7028eb821c157b652bca7487d9981dc2f396ce160486349d18acd2829987c289",
+    "44aef5e0543f70d622d8b2439fccae24baa385a732112b40f8c10bbf04d68ecb",
+    "ea64c62f5bc4ae65df345171e09f9512b382f4718ba2e1727f36276378b2cc0c",
+    "c04f608cd14f1619aa0194d28ee7e055f1a592683952b85771552778920195bb",
+    "21e72eda55893a5c6074a86b50ef1941306b925166e3658471ef82765d112ec0",
+    "dfddb49f3e8fb219e95936e2b6b5c05551d018ca9d2f9a2ee4ed9ad84adff654",
+    "4ab0383fca45d4b50e86d0761971636741377a5fa42262a84908dcbbe5e054c4",
+    "153f84b59c9be2e2ad46fa25d6ba4134dbef4e2e256fe5cc8fb43fffbe838ac6",
+    "de5ac1a34f934be228606de988e11ab197af52f4e17328786566c0d44df458b9",
+    "4ad80b2f7c034e03318739de8f5a5e7bdd39842b3a01595f1924e743fd023bc9",
+    "66abc49287871131dcc8f3d4c64ba3817c729572220708ff495f46fb3a5338f4"
+  ],
+  "fixture_sha256": "979bc6e1a0f10504690362f511a0f878815dfd2a55bdbcc4091e1c59468bd83e",
+  "selection": "Selected actual rows from two pinned HF range downloads; no generated observations"
+}

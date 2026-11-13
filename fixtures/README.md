@@ -10,7 +10,7 @@ hashes of the original row bytes.
   use-based restrictions in paragraph 5 and Attachment A.
 - `deepseek-v4-flash-tail.npz`: Copyright (c) 2023 DeepSeek. Distributed under
   the [upstream MIT licence](licenses/DeepSeek-V4-Flash-LICENSE).
-- `kimi-k3-tail.npz` and `kimi-k3-special.npz`: Copyright (c) 2026 Moonshot AI.
+- `kimi-k3-tail.npz`, `kimi-k3-special.npz` and `kimi-k3-confirmed.npz`: Copyright (c) 2026 Moonshot AI.
   Distributed under the [Kimi K3 licence](licenses/Kimi-K3-LICENSE).
 
 The upstream licences govern use and redistribution of these model slices.

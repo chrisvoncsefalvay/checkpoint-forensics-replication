@@ -5,7 +5,7 @@ initialisation. PyTorch distributes random-number streams across GPU threads;
 changing the thread count changes where those numbers land. A checkpoint can
 retain enough of that arrangement to recover the initialisation layout.
 
-This repository reproduces the central DeepSeek comparison in
+This repository reproduces initialisation-layout comparisons from
 [Will DePue's checkpoint-forensics report](https://unemploymentlabs.com/checkpoint-forensics)
 using weight slices downloaded from Hugging Face.
 
@@ -13,10 +13,12 @@ using weight slices downloaded from Hugging Face.
 |---|---:|---:|---:|
 | DeepSeek-V3 | 132 SMs | 0.9999986286 | 0.0058546500 |
 | DeepSeek-V4-Flash | 148 SMs | 0.9997838853 | 0.0040199187 |
+| Kimi K3 | 152 SMs | 0.9999961306 | 0.0017341414 |
 
 The results recover the reported Hopper-compatible and Blackwell-compatible
-layouts. Kimi K3 did not match in the searches tried here. The complete results,
-including the unsuccessful searches, are in [results/REPORT.md](results/REPORT.md).
+layouts. Kimi K3 required a wider row search and PyTorch’s large-tensor split
+behaviour. The results, including the earlier unsuccessful searches, are in
+[results/REPORT.md](results/REPORT.md).
 
 ## Run it
 
@@ -121,8 +123,8 @@ rest of training, its location or how it was acquired.
 python -m unittest discover -s tests -v
 ```
 
-Seven tests cover the checkpoint hashes, discovery/holdout split and the two
-DeepSeek results with their negative controls. All use the downloaded weights.
+Eight tests cover the checkpoint hashes, discovery/holdout split and the
+DeepSeek and Kimi results with their negative controls. All use the downloaded weights.
 Model slices retain their upstream licences; the fixture manifests identify
 their source repositories and revisions.
 
